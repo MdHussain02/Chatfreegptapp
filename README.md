@@ -3,7 +3,11 @@ ChatFreeGPT is a mobile application that leverages the power of GPT to provide a
 An API for handling chat functionalities.
 A Flutter mobile app that provides a user-friendly interface to interact with the API.
 
-### To Run API 
+
+
+### Step 1
+
+###  Run API 
 
 just run the run.bat file on the root folder (only works for windows)
 
@@ -24,3 +28,10 @@ pip install -r requirements.txt
 ```bash
 python gui.py
 ```
+### Step 2
+
+Start the API usig the start server button on the window 
+
+
+
+
