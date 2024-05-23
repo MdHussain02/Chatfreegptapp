@@ -44,6 +44,7 @@ def toggle_server():
 
 app = tk.Tk()
 app.title("API Server")
+app.iconbitmap('icon.ico')
 app.geometry("600x300")  # Increased window size
 
 # Styling
