@@ -32,6 +32,13 @@ python gui.py
 
 Start the API usig the start server button on the window 
 
+### Step 3
 
+Run the flutter app 
+
+1. chage the host address on the flutter app according to the API serving host Address it will apppear on the API GUI
+2. build the flutter app
+3. Run the app on your mobile device (
+you need to connect your mobile device and your computer on a same WIFI )
 
 
