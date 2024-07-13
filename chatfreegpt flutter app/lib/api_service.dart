@@ -5,7 +5,7 @@ class ApiService {
   static Future<String> sendMessage(String userInput) async {
     final response = await http.post(
       Uri.parse(
-          'http://192.168.101.3:5000/chat'), // Replace with your machine's IP
+          'http://192.168.1.101:5000/chat'), // Replace with your machine's IP
       headers: {'Content-Type': 'application/x-www-form-urlencoded'},
       body: {'user_input': userInput},
     );

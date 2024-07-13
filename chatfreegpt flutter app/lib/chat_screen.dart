@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
-
 import 'chat_bubble.dart';
 import 'loading_indicator.dart';
 import 'api_service.dart';
@@ -57,7 +54,7 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
 
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
-          duration: Duration(milliseconds: 300),
+          duration: const Duration(milliseconds: 300),
           curve: Curves.easeOut,
         );
       } catch (e) {
@@ -70,9 +67,10 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    var accentColor;
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'ChatFree GPT',
           style: TextStyle(
             fontSize: 20.0,
@@ -87,14 +85,15 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
           Expanded(
             child: ListView.builder(
               controller: _scrollController,
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               itemCount: messages.length,
               itemBuilder: (context, index) {
                 final message = messages[index]['message'];
                 if (message == null) {
                   return ChatBubble(
                     message: LoadingIndicator(
-                        animationController: _animationController),
+                      animationController: _animationController,
+                    ),
                     isUserMessage: false,
                   );
                 } else {
@@ -119,24 +118,25 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
                       hintText: 'Type a message',
                       hintStyle: TextStyle(color: Colors.white54),
                       filled: true,
-                      fillColor: Color(0xFF1F1F1F),
+                      fillColor: const Color(0xFF1F1F1F),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20),
                         borderSide: BorderSide.none,
                       ),
-                      contentPadding: EdgeInsets.symmetric(
+                      contentPadding: const EdgeInsets.symmetric(
                           horizontal: 16.0, vertical: 10.0),
                     ),
                   ),
                 ),
-                SizedBox(width: 8.0),
+                const SizedBox(width: 8.0),
                 FloatingActionButton(
                   onPressed: _isLoading
                       ? null
                       : _sendMessage, // Disable button when loading
-                  child: Icon(Icons.send, color: Colors.white),
-                  backgroundColor:
-                      _isLoading ? Colors.grey : Theme.of(context).accentColor,
+                  child: const Icon(Icons.send, color: Colors.white),
+                  backgroundColor: _isLoading
+                      ? Colors.grey
+                      : Theme.of(context).colorScheme.secondary,
                 ),
               ],
             ),
