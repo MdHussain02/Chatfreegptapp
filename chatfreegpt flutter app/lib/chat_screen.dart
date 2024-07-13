@@ -67,7 +67,6 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    var accentColor;
     return Scaffold(
       appBar: AppBar(
         title: const Text(
