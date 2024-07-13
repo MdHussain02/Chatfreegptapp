@@ -6,8 +6,8 @@ class ChatApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: Color(0xFF121212),
-        primaryColor: Color(0xFF1F1F1F),
+        scaffoldBackgroundColor: Color.fromARGB(255, 18, 18, 18),
+        primaryColor: Color.fromARGB(255, 36, 81, 139),
         textTheme: const TextTheme(
           bodyLarge: TextStyle(color: Colors.white),
           bodyMedium: TextStyle(color: Colors.white70),
